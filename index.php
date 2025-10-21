@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
-    <title>WS303D - Changement Climatique en France</title>
+    <title>WS303D - Accueil </title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Chart.js -->

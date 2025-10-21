@@ -1,4 +1,4 @@
-<?php include "header.php"; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,13 +13,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
+    <?php include "header.php"; ?>
   <main class="main">
 
     <div class="heading-hero">
-        <h1>ACCUEIL</h1>
+        <h1 class="titrepage">ACCUEIL</h1>
       <h1>Changement climatique : évolution & projections en France</h1>
       <p>Explorez en temps réel l’évolution des températures dans chaque région depuis 1980 et visualisez les projections climatiques pour les prochaines décennies.</p>
       <div class="section-description">
@@ -53,7 +55,6 @@
     </section>
   </main>
 
-  <?php include "footer.php"; ?>
   
   <!-- Scripts (identiques à avant) -->
   <script>

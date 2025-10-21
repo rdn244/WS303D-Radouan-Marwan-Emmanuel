@@ -1,0 +1,215 @@
+/* ----- Style général ----- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, 
+      #8400ff,  
+      #ff1375,  
+      #ff0040,   
+      #ea00ff,  
+      #8400ff  
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #2d2d2d;
+  display: flex;
+    height: 100vh;
+  overflow: hidden;
+}
+
+/* ----- Conteneur principal ----- */
+main {
+  flex-grow: 1;
+  background: #f3f3f3;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+aside {
+  width: 70px; /* réduit par défaut */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 10px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+  transition: width 0.3s ease, padding 0.3s ease;
+}
+
+aside:hover {
+  width: 250px;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.logo-mini {
+  display: block;
+}
+
+.logo-full {
+  display: none;
+  max-width: 180px; /* optionnel, pour pas dépasser la sidebar */
+}
+
+img.logo-mini {
+    margin-left: 13px;
+    width: 55%;
+}
+
+aside:hover .logo-mini {
+  display: none;
+}
+
+aside:hover .logo-full {
+  display: block;
+}
+
+
+/* ----- Navigation ----- */
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 700;
+}
+
+nav a {
+  color: #e0e7ff;
+  text-decoration: none;
+  padding: 12px;
+  margin: 50px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+nav a span {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+aside:hover nav a span {
+  display: inline;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ----- Icones seulement par défaut ----- */
+nav a i {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+
+/* ----- Menu de navigation ----- */
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 700;
+}
+
+
+nav a:hover, 
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ----- Bouton Premium ----- */
+.upgrade {
+  margin-top: auto;
+  background: #f472b6;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upgrade:hover {
+  background: #ec4899;
+}
+
+/* ----- Sections du contenu principal ----- */
+section {
+  background: #fdfdff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+.titrepage{
+    color: #dd00ff;
+    font-weight: 900;
+    margin-bottom: 60px;
+}
+
+h2 {
+  color: #312e81;
+  margin-bottom: 15px;
+}
+
+/* ----- Slider ----- */
+label, #yearValue {
+  font-weight: 500;
+  color: #4b5563;
+}
+
+input[type="range"] {
+  width: 300px;
+  margin: 10px;
+  accent-color: #6366f1;
+}
+
+/* ----- Carte et graphiques ----- */
+#map, canvas, #chartProjection {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Scroll doux */
+main::-webkit-scrollbar {
+  width: 8px;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: rgba(99, 102, 241, 0.4);
+  border-radius: 8px;
+}
+
+footer {
+  width: 73px;
+  color:white;
+}
+

@@ -5,15 +5,15 @@
   </div>
 
   <nav>
-    <a href="index.php">
+    <a href="#changement">
       <i class="fas fa-home"></i>
-      <span>Accueil</span>
+      <span>Changement Climatiques</span>
     </a>
     <a href="#projections">
       <i class="fas fa-chart-line"></i>
       <span>Projections futures</span>
     </a>
-    <a href="#carte">
+    <a href="#carteinteractive">
       <i class="fas fa-map"></i>
       <span>Carte interactive</span>
     </a>

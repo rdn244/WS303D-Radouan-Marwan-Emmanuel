@@ -54,15 +54,15 @@
 <main class="main">
 
     <div class="heading-hero">
-        <h1 class="titrepage">ACCUEIL</h1>
-        <h1>Changement climatique : évolution & projections en France</h1>
+        <h1 class="titrepage" >DATANEXT Agency</h1>
+        <h1 id="changement">Changement climatique : évolution & projections en France</h1>
         <p>Explorez en temps réel l’évolution des températures dans chaque région depuis 1980 et visualisez les projections climatiques pour les prochaines décennies.</p>
         <div class="section-description">
             Ce tableau de bord utilise des données officielles pour comprendre comment les climats locaux ont changé, et ce qui nous attend. Passez la souris sur les graphiques ou sélectionnez une région pour affiner l’analyse.
         </div>
     </div>
 
-    <section class="graph-section">
+    <section class="graph-section" id="temperatures">
         <h2>Températures : évolution régionale depuis 1980</h2>
         <div class="section-description">
             Carte interactive : cliquez sur une région pour voir son historique annuel. Le graphique montre la moyenne annuelle et les écarts importants. Source : Météo France.
@@ -71,7 +71,7 @@
         <canvas id="chartTempReg"></canvas>
     </section>
 
-    <section class="graph-section">
+    <section class="graph-section"id="projections">
         <h2>Projections climatiques (2025-2100)</h2>
         <div class="section-description">
             Les modèles IPCC et Météo France projettent un réchauffement significatif : +2 °C à +4 °C selon les scénarios RCP. Sélectionnez l’horizon temporel ou le scénario pour analyser l’impact possible.
@@ -79,7 +79,7 @@
         <canvas id="chartProjection"></canvas>
     </section>
 
-    <section class="graph-section">
+    <section class="graph-section" id="carteinteractive">
         <h2>Carte des stations météo et points d’observation</h2>
         <div class="section-description">
             Visualisez les stations météo actives et historiques, avec accès aux relevés locaux. Zoomez et cliquez pour le détail d’une station.

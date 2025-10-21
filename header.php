@@ -7,7 +7,7 @@
   <nav>
     <a href="#changement">
       <i class="fas fa-home"></i>
-      <span>Changement Climatiques</span>
+      <span>Changement Climatique</span>
     </a>
     <a href="#projections">
       <i class="fas fa-chart-line"></i>

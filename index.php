@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
-    <title>WS303D - Accueil </title>
+    <title>WS303D - DataNext Agency </title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Chart.js -->
@@ -54,7 +54,7 @@
 <main class="main">
 
     <div class="heading-hero">
-        <h1 class="titrepage" >DATANEXT Agency</h1>
+        <h1 class="titrepage" >DataNext Agency</h1>
         <h1 id="changement">Changement climatique : évolution & projections en France</h1>
         <p>Explorez en temps réel l’évolution des températures dans chaque région depuis 1980 et visualisez les projections climatiques pour les prochaines décennies.</p>
         <div class="section-description">

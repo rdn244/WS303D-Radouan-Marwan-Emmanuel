@@ -2,11 +2,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, 
-      #8400ff,  
-      #ff1375,  
-      #ff0040,   
-      #ea00ff,  
-      #8400ff  
+      #8400ffa1,  
+      #ff13759f,
+      #ffae0091,  
+      #ff004091,  
+      #ea00ffa1,  
+      #8400ffa8  
   );
   background-size: cover;
   background-position: center;
@@ -14,14 +15,15 @@ body {
   background-attachment: fixed;
   color: #2d2d2d;
   display: flex;
-    height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
 /* ----- Conteneur principal ----- */
 main {
+  scroll-behavior: smooth;
   flex-grow: 1;
-  background: #f3f3f3;
+  background: #ffbfbf75;
   border-radius: 20px;
   margin: 20px;
   padding: 30px;
@@ -29,6 +31,7 @@ main {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
+/* ----- Conteneur latéral (aside) ----- */
 aside {
   width: 70px; /* réduit par défaut */
   display: flex;
@@ -37,7 +40,11 @@ aside {
   padding: 25px 10px;
   border-radius: 0 20px 20px 0;
   box-shadow: 4px 0 20px rgba(0,0,0,0.1);
-  transition: width 0.3s ease, padding 0.3s ease;
+  transition: width 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), 
+              padding 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), 
+              align-items 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99); /* Transition plus lente */
+  position: relative;
+  z-index: 10;
 }
 
 aside:hover {
@@ -46,36 +53,47 @@ aside:hover {
   padding-left: 20px;
 }
 
+/* ----- Logos dans la navbar ----- */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
   margin-bottom: 40px;
+  position: relative; /* Ajouté pour que le positionnement de logo soit relatif à la navbar */
 }
 
 .logo-mini {
   display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .logo-full {
-  display: none;
-  max-width: 180px; /* optionnel, pour pas dépasser la sidebar */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s 
+ease, transform 0.5s 
+ease;
+    position: absolute;
+    top: 12%;
+    left: -7%;
+    transform: translate(-50%, -50%);
 }
-
 img.logo-mini {
-    margin-left: 13px;
-    width: 55%;
+  width: 100%;
 }
 
 aside:hover .logo-mini {
-  display: none;
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 aside:hover .logo-full {
   display: block;
+  opacity: 1;
+  transform: scale(1);
 }
-
 
 /* ----- Navigation ----- */
 nav {
@@ -83,15 +101,17 @@ nav {
   flex-direction: column;
   width: 100%;
   font-weight: 700;
+  transition: all 0.8s ease; /* Transition plus douce sur tous les changements */
+      margin-top: -60%;
 }
 
 nav a {
   color: #e0e7ff;
   text-decoration: none;
   padding: 12px;
-  margin: 50px 0;
+  margin: 30px 0;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce sur fond et couleur du texte */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -115,13 +135,12 @@ nav a.active {
   color: #fff;
 }
 
-/* ----- Icones seulement par défaut ----- */
+/* ----- Icones dans la navbar ----- */
 nav a i {
   font-size: 20px;
   width: 24px;
   text-align: center;
 }
-
 
 /* ----- Menu de navigation ----- */
 nav {
@@ -131,11 +150,11 @@ nav {
   font-weight: 700;
 }
 
-
 nav a:hover, 
 nav a.active {
   background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
+  width: auto;
 }
 
 /* ----- Bouton Premium ----- */
@@ -148,7 +167,7 @@ nav a.active {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .upgrade:hover {
@@ -165,14 +184,18 @@ section {
   margin-top: 20px;
 }
 
-h1 {
-    margin-left: 10px;
+.section-description {
+  margin-bottom: 5px;
 }
 
-.titrepage{
-    color: #dd00ff;
-    font-weight: 900;
-    margin-bottom: 60px;
+h1 {
+  margin-left: 10px;
+}
+
+.titrepage {
+  color: #dd00ff;
+  font-weight: 900;
+  margin-bottom: 60px;
 }
 
 h2 {
@@ -210,6 +233,9 @@ main::-webkit-scrollbar-thumb {
 
 footer {
   width: 73px;
-  color:white;
+  color: white;
 }
 
+div#accueil {
+  color: white;
+}

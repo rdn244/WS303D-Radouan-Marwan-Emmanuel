@@ -55,7 +55,7 @@
 <main class="main">
 
     <div class="heading-hero" id="accueil">
-        <h1 class="titrepage" >Data Next Agency</h1>
+        <h1 class="titrepage" ><img src="img/logo.svg" alt="Logo complet" ></h1>
         <h1 id="changement">Changement climatique : évolution & projections en France</h1>
         <p>Explorez en temps réel l’évolution des températures dans chaque région depuis 1980 et visualisez les projections climatiques pour les prochaines décennies.</p>
         <div class="section-description">

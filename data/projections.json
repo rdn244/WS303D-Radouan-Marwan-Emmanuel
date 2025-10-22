@@ -1,0 +1,93 @@
+[
+  {
+    "region": "Auvergne-Rhône-Alpes",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 16.7, "t_max_estimee": 46.3, "t_min_estimee": -3.5},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 19.2, "t_max_estimee": 49.8, "t_min_estimee": -0.8}
+    ]
+  },
+  {
+    "region": "Bourgogne-Franche-Comté",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 15.2, "t_max_estimee": 44.6, "t_min_estimee": -5.0},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 17.9, "t_max_estimee": 48.1, "t_min_estimee": -1.4}
+    ]
+  },
+  {
+    "region": "Bretagne",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 15.6, "t_max_estimee": 43.2, "t_min_estimee": -3.1},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 18.3, "t_max_estimee": 46.9, "t_min_estimee": -0.2}
+    ]
+  },
+  {
+    "region": "Centre-Val de Loire",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 16.1, "t_max_estimee": 45.1, "t_min_estimee": -3.7},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 18.7, "t_max_estimee": 48.9, "t_min_estimee": -0.9}
+    ]
+  },
+  {
+    "region": "Corse",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 19.4, "t_max_estimee": 48.3, "t_min_estimee": -1.2},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 21.5, "t_max_estimee": 52.4, "t_min_estimee": 1.1}
+    ]
+  },
+  {
+    "region": "Grand Est",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 14.5, "t_max_estimee": 43.8, "t_min_estimee": -5.8},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 17.2, "t_max_estimee": 47.8, "t_min_estimee": -2.0}
+    ]
+  },
+  {
+    "region": "Hauts-de-France",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 14.2, "t_max_estimee": 42.3, "t_min_estimee": -5.1},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 16.8, "t_max_estimee": 46.2, "t_min_estimee": -1.5}
+    ]
+  },
+  {
+    "region": "Île-de-France",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 17.0, "t_max_estimee": 45.2, "t_min_estimee": -4.2},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 19.8, "t_max_estimee": 49.0, "t_min_estimee": -0.5}
+    ]
+  },
+  {
+    "region": "Normandie",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 15.1, "t_max_estimee": 43.5, "t_min_estimee": -4.5},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 17.9, "t_max_estimee": 47.4, "t_min_estimee": -1.0}
+    ]
+  },
+  {
+    "region": "Nouvelle-Aquitaine",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 15.9, "t_max_estimee": 44.8, "t_min_estimee": -3.8},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 18.6, "t_max_estimee": 48.7, "t_min_estimee": -0.3}
+    ]
+  },
+  {
+    "region": "Occitanie",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 17.2, "t_max_estimee": 46.7, "t_min_estimee": -1.7},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 20.1, "t_max_estimee": 50.6, "t_min_estimee": 1.5}
+    ]
+  },
+  {
+    "region": "Pays de la Loire",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 14.4, "t_max_estimee": 42.0, "t_min_estimee": -4.9},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 17.1, "t_max_estimee": 45.9, "t_min_estimee": -1.4}
+    ]
+  },
+  {
+    "region": "Provence-Alpes-Côte d’Azur",
+    "projections": [
+      {"scenario": "+2°C", "annee_cible": 2050, "t_moy_estimee": 18.0, "t_max_estimee": 47.8, "t_min_estimee": -0.8},
+      {"scenario": "+4°C", "annee_cible": 2100, "t_moy_estimee": 20.6, "t_max_estimee": 51.9, "t_min_estimee": 2.5}
+    ]
+  }
+]

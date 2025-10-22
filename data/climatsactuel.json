@@ -1,0 +1,15 @@
+[
+  {"date": "2024-12-31", "region": "Auvergne-Rhône-Alpes", "t_moy": 14.1, "t_max": 44.2, "t_min": -9.7, "precipitations": 900, "anomalie": 1.3},
+  {"date": "2024-12-31", "region": "Bourgogne-Franche-Comté", "t_moy": 13.4, "t_max": 43.1, "t_min": -9.9, "precipitations": 950, "anomalie": 1.1},
+  {"date": "2024-12-31", "region": "Bretagne", "t_moy": 13.7, "t_max": 41.8, "t_min": -8.1, "precipitations": 1100, "anomalie": 1.2},
+  {"date": "2024-12-31", "region": "Centre-Val de Loire", "t_moy": 13.8, "t_max": 42.3, "t_min": -9.0, "precipitations": 850, "anomalie": 1.2},
+  {"date": "2024-12-31", "region": "Corse", "t_moy": 16.7, "t_max": 46.0, "t_min": -5.2, "precipitations": 700, "anomalie": 1.6},
+  {"date": "2024-12-31", "region": "Grand Est", "t_moy": 12.9, "t_max": 43.2, "t_min": -10.4, "precipitations": 970, "anomalie": 1.0},
+  {"date": "2024-12-31", "region": "Hauts-de-France", "t_moy": 13.1, "t_max": 41.7, "t_min": -9.5, "precipitations": 920, "anomalie": 1.0},
+  {"date": "2024-12-31", "region": "Île-de-France", "t_moy": 14.7, "t_max": 44.5, "t_min": -8.3, "precipitations": 850, "anomalie": 1.4},
+  {"date": "2024-12-31", "region": "Normandie", "t_moy": 13.6, "t_max": 42.5, "t_min": -9.1, "precipitations": 900, "anomalie": 1.1},
+  {"date": "2024-12-31", "region": "Nouvelle-Aquitaine", "t_moy": 14.0, "t_max": 43.3, "t_min": -8.5, "precipitations": 870, "anomalie": 1.2},
+  {"date": "2024-12-31", "region": "Occitanie", "t_moy": 14.9, "t_max": 44.8, "t_min": -7.4, "precipitations": 820, "anomalie": 1.5},
+  {"date": "2024-12-31", "region": "Pays de la Loire", "t_moy": 13.2, "t_max": 41.1, "t_min": -9.3, "precipitations": 960, "anomalie": 1.1},
+  {"date": "2024-12-31", "region": "Provence-Alpes-Côte d’Azur", "t_moy": 15.7, "t_max": 45.6, "t_min": -6.2, "precipitations": 660, "anomalie": 1.6}
+]

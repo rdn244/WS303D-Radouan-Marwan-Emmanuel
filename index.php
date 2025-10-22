@@ -533,5 +533,20 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+<script>
+// Sélectionner l'élément aside
+const aside = document.querySelector('aside');
+
+// Appliquer une transition plus lente quand la souris survole l'aside
+aside.addEventListener('mouseenter', () => {
+    aside.style.transition = 'width 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), padding 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99)';
+});
+
+// Réinitialiser la transition quand la souris quitte l'aside
+aside.addEventListener('mouseleave', () => {
+    aside.style.transition = 'width 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), padding 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99)';
+});
+</script>
+
 </body>
 </html>

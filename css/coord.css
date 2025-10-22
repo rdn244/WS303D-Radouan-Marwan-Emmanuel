@@ -190,3 +190,7 @@ body {
 div#fiche_coord a {
     color: white;
 }
+
+.block_principale_block {
+    width: 100%;
+}

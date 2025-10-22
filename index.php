@@ -48,12 +48,13 @@
     </style>
 </head>
 
+
 <body>
 <?php include "header.php"; ?>
 
 <main class="main">
 
-    <div class="heading-hero">
+    <div class="heading-hero" id="accueil">
         <h1 class="titrepage" >Data Next Agency</h1>
         <h1 id="changement">Changement climatique : évolution & projections en France</h1>
         <p>Explorez en temps réel l’évolution des températures dans chaque région depuis 1980 et visualisez les projections climatiques pour les prochaines décennies.</p>
@@ -65,7 +66,7 @@
     <section class="graph-section" id="temperatures">
         <h2>Températures : évolution régionale depuis 1980</h2>
         <div class="section-description">
-            Carte interactive : cliquez sur une région pour voir son historique annuel. Le graphique montre la moyenne annuelle et les écarts importants. Source : Météo France.
+            Le graphique montre la moyenne annuelle et les écarts importants. Source : Météo France.
         </div>
         <div id="map-region"></div>
         <canvas id="chartTempReg"></canvas>
@@ -82,11 +83,13 @@
     <section class="graph-section" id="carteinteractive">
         <h2>Carte des stations météo et points d’observation</h2>
         <div class="section-description">
-            Visualisez les stations météo actives et historiques, avec accès aux relevés locaux. Zoomez et cliquez pour le détail d’une station.
+            Carte interactive : cliquez sur une région pour voir son historique annuel. Visualisez les stations météo actives et historiques, avec accès aux relevés locaux. Zoomez et cliquez pour le détail d’une station.
         </div>
         <div id="mapStations"></div>
     </section>
 </main>
+
+
 
 <script>
     // ==========================================================
@@ -461,6 +464,73 @@
     legend.addTo(mapStations);
 </script>
 
+
+
+<script>
+      // classes actives navbar
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll("aside nav a[href^='#']");
+  const sections = [];
+
+  // Récupération des sections cibles
+  links.forEach(link => {
+    const id = link.getAttribute("href").substring(1);
+    const section = document.getElementById(id);
+    if (section) sections.push(section);
+  });
+
+  const main = document.querySelector("main");
+
+  // Fonction pour mettre à jour le lien actif selon le scroll
+  function updateActiveLink() {
+    const scrollPos = main.scrollTop;
+    const mainHeight = main.clientHeight;
+
+    let activeId = null;
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
+      const offsetTop = section.offsetTop;
+      const offsetHeight = section.offsetHeight;
+
+      // Détermine si la section est visible
+      if (scrollPos >= offsetTop - mainHeight / 4 && scrollPos < offsetTop + offsetHeight - mainHeight / 4) {
+        activeId = section.id;
+        break;
+      }
+    }
+
+    // Mise à jour des liens actifs
+    links.forEach(link => {
+      const id = link.getAttribute("href").substring(1);
+      if (id === activeId) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Scroll fluide lors du clic
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const id = link.getAttribute("href").substring(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      main.scrollTo({
+        top: target.offsetTop - 20, // marge de confort
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // Détection du scroll dans <main>
+  main.addEventListener("scroll", updateActiveLink);
+  // Initialisation au chargement
+  updateActiveLink();
+});
+</script>
 
 
 </body>

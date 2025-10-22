@@ -1,10 +1,10 @@
 <?php
-include("header.php");
+include("headerpageequipe.php");
 ?>
 <link rel="stylesheet" href="css/coord.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<div class="block_principale block">
+<div class="block_principale_block">
     <h1>Nos coordonnées</h1>
 
     <div id="fiche_coord">
@@ -71,7 +71,7 @@ include("header.php");
             <div class="coord_perso">
                 <a href="tel:">
                     <img class="icone_coord" src="img/icones/telephone.png" alt="image téléphone">
-                    07 ...
+                    07 68 39 12 77
                 </a>
                 <a href="mailto:">
                     <img class="icone_coord" src="img/icones/email.png" alt="logo enveloppe email">

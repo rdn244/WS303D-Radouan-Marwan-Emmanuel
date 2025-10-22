@@ -6,11 +6,6 @@
   </div>
 
   <nav>
-    <a href="index.php">
-      <i class=""></i>
-      <span></span>
-
-
         <a href="index.php">
       <i class="fas fa-home"></i>
       <span>Accueil</span>

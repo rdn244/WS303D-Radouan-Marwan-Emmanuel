@@ -13,7 +13,7 @@
     overflow-x: auto; /* Scroll horizontal si trop large */
     scroll-behavior: smooth; /* Défilement fluide */
     -webkit-overflow-scrolling: touch; /* Pour mobile */
-    flex-wrap: nowrap; /* Ne pas wrap pour garder les fiches sur la même ligne */
+    flex-wrap: wrap; /* Permet le wrap quand la taille de l'écran est réduite */
 }
 
 /* Scrollbar personnalisée */
@@ -158,7 +158,35 @@
     }
 }
 
-.block_principale_block h1{
- color:white;
- margin-left: 32px;
+/* Adaptation pour petits écrans */
+@media screen and (max-width: 400px) {
+    #fiche_coord {
+        flex-direction: column; /* Affiche les fiches en colonne sur très petits écrans */
+        padding: 10px;
+    }
+
+    #marwan, #radouan, #emmanuel {
+        flex: 0 0 100%; /* Fiches prennent toute la largeur */
+        margin-bottom: 20px; /* Ajoute un espacement entre les fiches */
+    }
+
+    .coord_perso a {
+        font-size: 12px; /* Ajuste la taille des liens pour petits écrans */
+        gap: 6px;
+    }
+}
+
+/* Enlève les débordements horizontaux */
+body {
+    overflow-x: hidden;
+}
+
+/* Ajustements de l'en-tête pour les petites résolutions */
+.block_principale_block h1 {
+    color: white;
+    margin-left: 32px;
+}
+
+div#fiche_coord a {
+    color: white;
 }

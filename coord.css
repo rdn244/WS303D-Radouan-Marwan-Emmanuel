@@ -1,0 +1,159 @@
+/* ============================ */
+/* Styles premium pour la page "Nos coordonnées" */
+/* ============================ */
+
+/* Bloc principal de la page : scroll horizontal */
+#fiche_coord {
+    display: flex;
+    flex-direction: row; /* Horizontal */
+    gap: 25px; /* Espacement entre les fiches */
+    max-width: 100%; /* S'adapte à la largeur de la page */
+    margin: auto;
+    padding: 20px;
+    overflow-x: auto; /* Scroll horizontal si trop large */
+    scroll-behavior: smooth; /* Défilement fluide */
+    -webkit-overflow-scrolling: touch; /* Pour mobile */
+    flex-wrap: nowrap; /* Ne pas wrap pour garder les fiches sur la même ligne */
+}
+
+/* Scrollbar personnalisée */
+#fiche_coord::-webkit-scrollbar {
+    height: 8px;
+}
+#fiche_coord::-webkit-scrollbar-thumb {
+    background: rgba(91,192,222,0.5);
+    border-radius: 4px;
+}
+#fiche_coord::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+
+/* Fiches individuelles : glassmorphism + hover */
+#marwan, #radouan, #emmanuel {
+    flex: 0 0 300px; /* Largeur fixe pour chaque fiche */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    min-width: 250px; /* Empêche les fiches d’être trop petites */
+}
+
+/* Hover effect */
+#marwan:hover, #radouan:hover, #emmanuel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Avatar rond avec initiales */
+#marwan .avatar_marwan, #radouan .avatar_radouan, #emmanuel .avatar_emmanuel {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #5bc0de, #3498db);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover avatar */
+#marwan:hover .avatar_marwan,
+#radouan:hover .avatar_radouan,
+#emmanuel:hover .avatar_emmanuel {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Initiales */
+#marwan .avatar_marwan::after { content: "M"; }
+#radouan .avatar_radouan::after { content: "R"; }
+#emmanuel .avatar_emmanuel::after { content: "E"; }
+
+/* Nom et prénom */
+#marwan .nom_fiche, #radouan .nom_fiche, #emmanuel .nom_fiche {
+    text-align: center;
+    margin-bottom: 15px;
+}
+#marwan h4, #radouan h4, #emmanuel h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+/* Coordonnées */
+.coord_perso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.coord_perso a {
+    color: #5bc0de;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.coord_perso a:hover {
+    color: #3498db;
+    transform: translateX(5px);
+}
+.icone_coord {
+    width: 22px;
+    height: 22px;
+}
+
+/* ============================ */
+/* Responsive : mobile et tablettes */
+/* ============================ */
+
+/* Tablettes : réduire légèrement la taille */
+@media screen and (max-width: 1100px) {
+    #marwan, #radouan, #emmanuel {
+        flex: 0 0 280px;
+    }
+}
+
+/* Smartphones : fiches plus petites et scroll horizontal actif */
+@media screen and (max-width: 800px) {
+    #marwan, #radouan, #emmanuel {
+        flex: 0 0 220px;
+        padding: 20px 15px;
+    }
+}
+
+/* Très petits écrans : ajuster les avatars et texte */
+@media screen and (max-width: 500px) {
+    #marwan, #radouan, #emmanuel {
+        flex: 0 0 180px;
+        padding: 15px 10px;
+    }
+    #marwan .avatar_marwan, #radouan .avatar_radouan, #emmanuel .avatar_emmanuel {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+    #marwan h4, #radouan h4, #emmanuel h4 {
+        font-size: 16px;
+    }
+    .coord_perso a {
+        font-size: 14px;
+        gap: 8px;
+    }
+}

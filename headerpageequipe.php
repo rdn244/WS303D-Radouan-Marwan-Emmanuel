@@ -9,19 +9,7 @@
     <a href="index.php">
       <i class="fas fa-home"></i>
       <span>Accueil</span>
-    </a>
-    <a href="index.php">
-      <i class="fas fa-chart-bar"></i>
-      <span>Changement Climatique</span>
-    </a>
-    <a href="index.php">
-      <i class="fas fa-chart-line"></i>
-      <span>Projections futures</span>
-    </a>
-    <a href="index.php">
-      <i class="fas fa-map"></i>
-      <span>Carte interactive</span>
-    </a>
+
     <a href="equipe.php">
       <i class="fas fa-info-circle"></i>
       <span>Coordonnées</span>

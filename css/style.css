@@ -59,7 +59,7 @@ aside:hover {
   align-items: center;
   gap: 10px;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 116px;
   position: relative; /* Ajouté pour que le positionnement de logo soit relatif à la navbar */
 }
 
@@ -109,7 +109,7 @@ nav a {
   color: #e0e7ff;
   text-decoration: none;
   padding: 12px;
-  margin: 30px 0;
+  margin: 21px 0;
   border-radius: 12px;
   transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce sur fond et couleur du texte */
   display: flex;

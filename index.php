@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
     <title>WS303D - DataNext Agency </title>
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="icon" type="image/png" href="img/logomini.svg">
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
     <!-- D3.js -->
@@ -104,88 +104,165 @@
     // ==========================================================
     // 📊 GRAPHIQUE : ÉVOLUTION RÉGIONALE (1980–2025)
     // ==========================================================
-    const ctxReg = document.getElementById('chartTempReg').getContext('2d');
+    // Charger et lire le fichier JSON
+    fetch('data/evolution.json')
+        .then(response => response.json())
+        .then(data => {
+            // Extraire les années (labels) à partir de la première région
+            const labels = data[0].data.map(d => d.annee);
 
-    new Chart(ctxReg, {
-        type: 'line',
-        data: {
-            labels: ['1980', '1990', '2000', '2010', '2020', '2025'],
-            datasets: [
-                {
-                    label: "Île-de-France",
-                    data: [11.2, 11.6, 12.1, 12.8, 13.2, 13.6],
-                    borderColor: '#7c3aed',
-                    backgroundColor: 'rgba(139,92,246,0.15)',
-                    pointRadius: 5,
-                    tension: 0.3,
-                    fill: true
+            // Générer un jeu de couleurs aléatoires pour chaque région
+            const couleurs = data.map(() => {
+                const r = Math.floor(Math.random() * 255);
+                const g = Math.floor(Math.random() * 255);
+                const b = Math.floor(Math.random() * 255);
+                return {
+                    border: `rgb(${r}, ${g}, ${b})`,
+                    background: `rgba(${r}, ${g}, ${b}, 0.15)`
+                };
+            });
+
+            // Créer un dataset pour chaque région
+            const datasets = data.map((region, index) => ({
+                label: region.region,
+                data: region.data.map(d => d.t_moy),
+                borderColor: couleurs[index].border,
+                backgroundColor: couleurs[index].background,
+                borderWidth: 2,
+                pointRadius: 3,
+                tension: 0.3,
+                fill: true
+            }));
+
+            // Création du graphique
+            const ctx = document.getElementById('chartTempReg').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets
                 },
-                {
-                    label: "Occitanie",
-                    data: [12.2, 12.6, 13.1, 13.9, 14.5, 15.1],
-                    borderColor: '#34d399',
-                    backgroundColor: 'rgba(52,211,153,0.08)',
-                    pointRadius: 5,
-                    tension: 0.4,
-                    fill: true
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Évolution des températures moyennes par région (1980–2020)",
+                            font: { size: 18 }
+                        },
+                        legend: {
+                            position: 'bottom',
+                            labels: { boxWidth: 20, font: { size: 12 } }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.formattedValue} °C`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: "Année",
+                                font: { size: 14 }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: "Température moyenne (°C)",
+                                font: { size: 14 }
+                            },
+                            beginAtZero: false
+                        }
+                    }
                 }
-            ],
-        },
-        options: {
-            plugins: {
-                legend: { position: 'bottom' }
-            },
-            scales: {
-                y: {
-                    title: { display: true, text: "Température (°C)" }
-                }
-            }
-        }
-    });
+            });
+        })
+        .catch(error => console.error("Erreur lors du chargement du JSON :", error));
+
 
     // ==========================================================
     // 🔮 GRAPHIQUE : PROJECTIONS CLIMATIQUES (2025–2100)
     // ==========================================================
-    const ctxProj = document.getElementById('chartProjection').getContext('2d');
+    // Charger et lire le fichier JSON
+    fetch('data/projections.json')
+        .then(response => response.json())
+        .then(data => {
 
-    new Chart(ctxProj, {
-        type: 'line',
-        data: {
-            labels: ['2025', '2030', '2040', '2050', '2070', '2100'],
-            datasets: [
-                {
-                    label: "Scénario modéré (RCP4.5)",
-                    data: [13.6, 14.1, 14.8, 15.4, 16.2, 16.7],
-                    borderColor: '#fbbf24',
-                    backgroundColor: 'rgba(251,191,36,0.18)',
-                    tension: 0.35,
+            // On récupère les années distinctes (2050 et 2100 ici)
+            const annees = [...new Set(data.flatMap(r => r.projections.map(p => p.annee_cible)))];
+
+            // Préparation des structures pour les deux scénarios
+            const scenarios = ["+2°C", "+4°C"];
+            const couleurs = {
+                "+2°C": { border: '#fbbf24', background: 'rgba(251,191,36,0.18)' },
+                "+4°C": { border: '#ef4444', background: 'rgba(239,68,68,0.12)' }
+            };
+
+            // Création des datasets pour chaque scénario
+            const datasets = scenarios.map(scenario => {
+                const valeurs = data.map(region => {
+                    const proj = region.projections.find(p => p.scenario === scenario);
+                    return proj ? proj.t_moy_estimee : null;
+                });
+                return {
+                    label: `Scénario ${scenario}`,
+                    data: valeurs,
+                    borderColor: couleurs[scenario].border,
+                    backgroundColor: couleurs[scenario].background,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    tension: 0.3,
                     fill: true
+                };
+            });
+
+            // Les labels sur l’axe X seront les noms des régions
+            const labels = data.map(r => r.region);
+
+            // Création du graphique
+            const ctxProj = document.getElementById('chartProjection').getContext('2d');
+            new Chart(ctxProj, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets
                 },
-                {
-                    label: "Scénario pessimiste (RCP8.5)",
-                    data: [13.7, 14.3, 15.6, 16.5, 18.0, 19.2],
-                    borderColor: '#ef4444',
-                    backgroundColor: 'rgba(239,68,68,0.12)',
-                    tension: 0.35,
-                    fill: true
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Projections des températures moyennes régionales pour 2050 et 2100",
+                            font: { size: 18 }
+                        },
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.formattedValue} °C`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: "Régions françaises", font: { size: 14 } },
+                            ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                        },
+                        y: {
+                            title: { display: true, text: "Température moyenne estimée (°C)", font: { size: 14 } }
+                        }
+                    }
                 }
-            ],
-        },
-        options: {
-            plugins: {
-                legend: { position: 'bottom' },
-                title: {
-                    display: true,
-                    text: "Projections de température en France à +30/+75 ans"
-                }
-            },
-            scales: {
-                y: {
-                    title: { display: true, text: "Température (°C)" }
-                }
-            }
-        }
-    });
+            });
+        })
+        .catch(error => console.error("Erreur lors du chargement du fichier JSON :", error));
+
 
     // ==========================================================
     // 🌦️ CARTE DES STATIONS MÉTÉO (Leaflet + Cluster)

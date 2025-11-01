@@ -1,237 +1,56 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Carte de France métropolitaine</title>
     <link rel="stylesheet" href="css/test.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            max-width: 1400px;
-           margin: 0 auto;
-           gap: 30px;
-          flex-direction: row; 
-          align-items: flex-start; 
-        }
-
-        .carte-container {
-            flex: 0 0 60%;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            
-        }
-
-        .carte {
-            width: 80%;
-            height: auto;
-        }
-
-        .info-container {
-            flex: 0 0 40%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .info-card h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
-        }
-
-        .info-card p {
-            margin-bottom: 10px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .info-card .data-value {
-            font-weight: bold;
-            color: #3498db;
-        }
-
-        .info-card .data-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding: 5px 0;
-        }
-
-        .info-card .data-item:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .card-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 5px;
-        }
-
-        .card-title i {
-            color: #3498db;
-            font-size: 1.2em;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .stat-box {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 4px solid #3498db;
-            transition: all 0.3s ease;
-        }
-
-        .stat-box:hover {
-            background: #e9ecef;
-            transform: translateY(-2px);
-        }
-
-        .stat-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #7f8c8d;
-        }
-
-        /* Styles pour la carte SVG */
-        path {
-            stroke: #2c3e50;
-            stroke-width: 0.5px;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-opacity: .5;
-            fill: #86aae0;
-            transition: fill 0.3s, transform 0.2s;
-            cursor: pointer;
-        }
-
-        g:hover path {
-            fill: #5dade2;
-            transform: scale(1.005);
-        }
-
-        g path:hover {
-            fill: #3498db;
-        }
-
-        .selected {
-            fill: #e74c3c !important;
-            stroke-width: 1.5px;
-        }
-
-        .tooltip {
-            position: absolute;
-            background: rgba(44, 62, 80, 0.9);
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        footer {
-            text-align: center;
-            font-size: 12px;
-            margin-top: 20px;
-            color: #7f8c8d;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: row;
-                gap: 20px;
-            }
-            
-            .carte-container {
-                flex: 0 0 55%;
-            }
-            
-            .info-container {
-                flex: 0 0 45%;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                flex-direction: column;
-            }
-            
-            .carte-container, .info-container {
-                flex: 1;
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="icon" type="image/png" href="img/logomini.svg">
 </head>
 <body>
-    <h1>Carte de France métropolitaine</h1>
-    
-    <div class="container">
+
+
+        <aside>
+
+            <div class="logo">
+                <img src="img/logomini.svg" alt="Logo réduit" class="logo-mini">
+                <img src="img/logo2.svg" alt="Logo complet" class="logo-full">
+            </div>
+
+            <nav>
+                <a href="index.php">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="index.php">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Changement Climatique</span>
+                </a>
+                <a href="index.php">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Projections futures</span>
+                </a>
+                <a href="index.php">
+                    <i class="fas fa-map"></i>
+                    <span>Carte des stations</span>
+                </a>
+
+                <a href="equipe.php">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Coordonnées</span>
+                </a>
+                <!-- Nouvelle section -->
+                <a href="test.php">
+                    <i class="fas fa-map"></i>
+                    <span>Carte interractive</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="container">
         <div class="carte-container">
             <div class="carte">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="105 18 568 567">
@@ -414,9 +233,7 @@
         </div>
     </div>
     
-    <footer>
-        <p>Carte interactive de France - Données climatiques</p>
-    </footer>
+
 
     <div class="tooltip" id="map-tooltip"></div>
 

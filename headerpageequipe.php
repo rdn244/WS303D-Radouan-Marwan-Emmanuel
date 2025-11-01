@@ -1,6 +1,7 @@
 <aside>
     
   <div class="logo">
+
     <img src="img/logomini.svg" alt="Logo réduit" class="logo-mini">
     <img src="img/logo2.svg" alt="Logo complet" class="logo-full">
   </div>

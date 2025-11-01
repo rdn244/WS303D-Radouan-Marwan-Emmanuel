@@ -1,161 +1,172 @@
-/* ----- Style général ----- */
+/* ----- Mise en page principale ----- */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, 
-      #8400ffa1,  
-      #ff13759f,
-      #ffae0091,  
-      #ff004091,  
-      #ea00ffa1,  
-      #8400ffa8  
-  );
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #2d2d2d;
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
+    display: flex;                /* ✅ aligne aside + container côte à côte */
+    flex-direction: row;          /* ✅ horizontal */
+    align-items: flex-start;      /* évite l'alignement vertical centré */
+    justify-content: flex-start;  /* garde tout à gauche */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg,
+    #8400ffa1,
+    #ff13759f,
+    #ffae0091,
+    #ff004091,
+    #ea00ffa1,
+    #8400ffa8
+    );
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* ----- Conteneur principal de la page ----- */
+.container {
+    display: flex;                /* ✅ carte + infos côte à côte */
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    flex-grow: 1;
+    margin-left: 20px;            /* ✅ espace entre aside et le reste */
+    max-width: calc(100% - 90px); /* ajuste selon la largeur du aside */
 }
 
 /* ----- Conteneur principal ----- */
 main {
-  scroll-behavior: smooth;
-  flex-grow: 1;
-  background: #ffbfbf75;
-  border-radius: 20px;
-  margin: 20px;
-  padding: 30px;
-  overflow-y: auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    background: #ffbfbf75;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+    overflow-y: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 /* ----- Conteneur latéral (aside) ----- */
 aside {
-  width: 70px; /* réduit par défaut */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px 10px;
-  border-radius: 0 20px 20px 0;
-  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
-  transition: width 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), 
-              padding 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99), 
-              align-items 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99); /* Transition plus lente */
-  position: relative;
-  z-index: 10;
+    width: 70px; /* réduit par défaut */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 10px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+    transition: width 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99),
+    padding 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99),
+    align-items 0.8s cubic-bezier(0.46, -0.01, 0.33, 0.99);
+    position: relative;
+    z-index: 10;
+    height: 100vh;         /* ✅ occupe toute la hauteur */
+    overflow-y: auto;      /* ✅ permet de scroller si trop d’éléments */
 }
 
 aside:hover {
-  width: 250px;
-  align-items: flex-start;
-  padding-left: 20px;
+    width: 250px;
+    align-items: flex-start;
+    padding-left: 20px;
 }
 
 /* ----- Logos dans la navbar ----- */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  margin-bottom: 116px;
-  position: relative; /* Ajouté pour que le positionnement de logo soit relatif à la navbar */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .logo-mini {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .logo-full {
     display: none;
     opacity: 0;
-    transition: opacity 0.5s 
-ease, transform 0.5s 
-ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     position: absolute;
     top: 12%;
     left: -7%;
     transform: translate(-50%, -50%);
 }
+
 img.logo-mini {
-  width: 100%;
+    width: 100%;
+}
+
+.logo-full img {
+    width: 120px; /* ✅ logo principal plus petit */
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
 }
 
 aside:hover .logo-mini {
-  opacity: 0;
-  transform: scale(0.8);
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 aside:hover .logo-full {
-  display: block;
-  opacity: 1;
-  transform: scale(1);
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+aside:hover .logo-full img {
+    transform: scale(0.9); /* ✅ logo légèrement réduit au dépliage */
 }
 
 /* ----- Navigation ----- */
 nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  font-weight: 700;
-  transition: all 0.8s ease; /* Transition plus douce sur tous les changements */
-      margin-top: -60%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 700;
+    transition: all 0.8s ease;
+    margin-top: 0; /* ✅ supprime le décalage négatif */
 }
 
 nav a {
-  color: #e0e7ff;
-  text-decoration: none;
-  padding: 12px;
-  margin: 21px 0;
-  border-radius: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce sur fond et couleur du texte */
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
+    color: #e0e7ff;
+    text-decoration: none;
+    padding: 12px;
+    margin: 21px 0;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }
 
 nav a span {
-  display: none;
-  transition: opacity 0.3s ease;
+    display: none;
+    transition: opacity 0.3s ease;
 }
 
 aside:hover nav a span {
-  display: inline;
+    display: inline;
 }
 
 nav a:hover,
 nav a.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
 }
 
 /* ----- Icones dans la navbar ----- */
 nav a i {
-  font-size: 20px;
-  width: 24px;
-  text-align: center;
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
 }
 
-/* ----- Menu de navigation ----- */
-nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  font-weight: 700;
-}
-
-nav a:hover, 
-nav a.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  width: auto;
-}
 
 /* ----- Bouton Premium ----- */
 .upgrade {

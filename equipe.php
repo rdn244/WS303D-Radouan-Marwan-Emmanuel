@@ -5,7 +5,6 @@ include("headerpageequipe.php");
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div class="block_principale_block">
-    
     <h1> <i class="fas fa-info-circle"></i>   Nos coordonnées</h1>
 
     <div id="fiche_coord">
